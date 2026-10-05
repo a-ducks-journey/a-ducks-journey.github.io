@@ -1,0 +1,20 @@
+---
+layout: default
+---
+{% assign tp = site.data.topics[page.topic] %}
+<article class="post" lang="{% if page.language == 'en' %}en{% else %}zh-CN{% endif %}">
+  <header>
+    <p class="post-meta">
+      <a href="{% if page.language == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/zh/' | relative_url }}{% endif %}#{{ page.topic }}">{% if tp %}{% include t.html zh=tp.zh en=tp.en %}{% endif %}</a>
+      · <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+    </p>
+    <h1>{{ page.title }}</h1>
+  </header>
+  {% if page.cover %}<img class="post-cover" src="{{ page.cover | relative_url }}" alt="">{% endif %}
+  <div class="post-body">{{ content }}</div>
+  <p class="post-end">🦆</p>
+  <nav class="post-nav">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}
+  </nav>
+</article>

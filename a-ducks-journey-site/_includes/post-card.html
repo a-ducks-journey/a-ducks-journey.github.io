@@ -1,0 +1,12 @@
+{% assign p = include.post %}{% assign tp = site.data.topics[p.topic] %}
+<li class="card">
+  <a href="{{ p.url | relative_url }}">
+    <div class="card-meta">
+      <span class="badge">{% if p.language == "en" %}EN{% else %}中文{% endif %}</span>
+      {% if tp %}<span>{% include t.html zh=tp.zh en=tp.en %}</span>{% endif %}
+      <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%Y.%m.%d" }}</time>
+    </div>
+    <h3 lang="{% if p.language == 'en' %}en{% else %}zh-CN{% endif %}">{{ p.title }}</h3>
+    <p class="card-excerpt" lang="{% if p.language == 'en' %}en{% else %}zh-CN{% endif %}">{{ p.summary | default: p.excerpt | strip_html | truncate: 90 }}</p>
+  </a>
+</li>

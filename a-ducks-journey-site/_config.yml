@@ -1,0 +1,21 @@
+# 鸭子的旅行 · A Duck's Journey
+title: 鸭子的旅行
+title_en: A Duck's Journey
+description: 一只鸭子的日常旅行 · Notes from an everyday journey
+author: Tracy
+
+# If the repo is named <username>.github.io, leave baseurl empty.
+# If the repo has any other name (e.g. "blog"), set baseurl: "/blog"
+baseurl: ""
+url: "https://a-ducks-journey.github.io"
+
+timezone: America/Los_Angeles
+permalink: /posts/:year/:month/:title/
+markdown: kramdown
+excerpt_separator: "<!--more-->"
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+exclude: [README.md, Gemfile, Gemfile.lock]

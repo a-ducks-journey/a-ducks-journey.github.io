@@ -1,0 +1,14 @@
+# Topics used in each post's front matter (topic: growing-up).
+# Add a new line here to create a new topic.
+growing-up:
+  zh: 成长随笔
+  en: Growing Up
+everyday:
+  zh: 生活碎片
+  en: Everyday Moments
+study-work:
+  zh: 学习与实习
+  en: Study & Work
+trips:
+  zh: 旅途
+  en: Trips
