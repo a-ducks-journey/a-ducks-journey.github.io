@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<section class="hero">
+  <figure class="hero-photo">
+    <img src="{{ '/assets/images/home.jpg' | relative_url }}"
+         srcset="{{ '/assets/images/home-small.jpg' | relative_url }} 600w, {{ '/assets/images/home.jpg' | relative_url }} 1400w"
+         sizes="(max-width: 760px) 100vw, 45vw"
+         alt="阳光里的一枝新叶 · A sprig of new leaves in the sun">
+  </figure>
+  <div class="hero-text">
+    <h1>{% include t.html zh=site.title en=site.title_en %}</h1>
+    <p class="tagline">{% include t.html zh="一只鸭子的日常旅行" en="Notes from an everyday journey" %}</p>
+    <p class="intro">{% include t.html zh="生活就是一场旅行。这里记下路上的小事、成长里的心事，和偶尔真正出发的远行。" en="Life is a journey. Here are the small things along the way, thoughts about growing up, and the occasional real trip." %}</p>
+    <div class="hero-links">
+      <a class="btn" href="{{ '/zh/' | relative_url }}">中文文章</a>
+      <a class="btn btn-ghost" href="{{ '/en/' | relative_url }}">English Posts</a>
+    </div>
+  </div>
+</section>
+
+<section class="latest">
+  <h2>{% include t.html zh="最新文章" en="Latest" %}</h2>
+  <ul class="cards">
+    {% for post in site.posts limit: 6 %}{% include post-card.html post=post %}{% endfor %}
+  </ul>
+</section>
