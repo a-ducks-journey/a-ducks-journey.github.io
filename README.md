@@ -2,6 +2,8 @@
 
 Tracy's personal blog. Built with Jekyll; GitHub Pages publishes it automatically.
 
+Live site: https://a-ducks-journey.github.io
+
 ## Put it online (one time)
 
 1. Create a GitHub account and a new **public** repository.
